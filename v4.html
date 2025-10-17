@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plano Estratégico InnovAI 2026-2031: Rumo à Independência</title>
+    <!-- Carregamento de Bibliotecas: Tailwind CSS e Chart.js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Configuração de Fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #003f5c;
+        --color-secondary: #58508d;
+        --color-accent1: #bc5090;
+        --color-accent2: #ff6361;
+        --color-accent3: #ffa600;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+      }
+      /* Aumenta a altura dos gráficos para melhor visualização em tela cheia */
+      .chart-container {
+        position: relative;
+        width: 100%;
+        height: 400px; /* Padrão da Apresentação */
+      }
+      /* Estilos para a Linha do Tempo (Mais compacta, mas legível) */
+      .timeline-item {
+        position: relative;
+        padding-bottom: 2.5rem;
+        padding-left: 2.5rem;
+      }
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 0.25rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 9999px;
+        border-width: 4px;
+        background-color: #fff;
+      }
+      .timeline-line {
+        position: absolute;
+        left: 0.65rem;
+        top: 1.75rem;
+        bottom: 0;
+        width: 4px;
+        background-color: #e5e7eb;
+      }
+      .timeline-item:last-child .timeline-line {
+        display: none;
+      }
+      /* Animação Fade In */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 0.4s ease-out forwards;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Efeito de Hover para Métricas */
+      .metric-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .metric-card:hover {
+        transform: translateY(-4px); /* Padrão antigo (mais sutil) */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      /* Destaque para a Seção Chave de Automação (MANTIDO o estilo da Apresentação) */
+      .key-section-highlight {
+        border: 5px solid var(--color-accent3);
+        background-color: #fffbeb;
+      }
+      /* Ajuste de tipografia para o Chart.js */
+      .chartjs-render-monitor {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <div class="container mx-auto p-4 md:p-12">
+      <!-- SLIDE 1: TÍTULO E VISÃO -->
+      <header class="text-center mb-16" data-delay="0">
+        <h1
+          class="text-6xl md:text-8xl font-extrabold text-[var(--color-primary)] mb-6"
+        >
+          InnovAI: O Plano de 5 Anos para a
+          <span class="text-[var(--color-accent3)]">Independência</span>
+        </h1>
+        <p class="text-3xl text-[var(--color-secondary)] mb-4">
+          Execução 2026-2031: De Serviços B2B a um Portfólio de Produtos B2C de
+          Sucesso
+        </p>
+        <div class="mt-12 mx-auto max-w-4xl">
+          <div
+            class="text-center border-l-8 border-[var(--color-accent1)] bg-gray-100 p-6 shadow-xl rounded-xl"
+          >
+            <p class="text-2xl font-semibold">
+              Nossa Missão: Construir um ecossistema de trabalho
+              <strong class="text-[var(--color-accent1)]]"
+                >saudável, estável e escalável</strong
+              >, desenvolvendo um portfólio de 15+ Apps que estabeleça nossa
+              independência estratégica e autonomia operacional.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- SLIDE 2: SUMÁRIO EXECUTIVO -->
+      <section
+        class="bg-white rounded-3xl shadow-2xl p-10 mb-16"
+        data-delay="1"
+      >
+        <h2
+          class="text-5xl font-bold text-[var(--color-primary)] mb-10 text-center"
+        >
+          🎯 Onde Estaremos em 2031 (As Grandes Metas)
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="text-center metric-card p-6 bg-blue-50 rounded-xl">
+            <div
+              class="text-6xl font-extrabold text-[var(--color-primary)] mb-2"
+            >
+              R$ 1M+
+            </div>
+            <div class="text-xl text-gray-700 font-medium">
+              Faturamento Anual (ARR)
+            </div>
+          </div>
+          <div class="text-center metric-card p-6 bg-indigo-50 rounded-xl">
+            <div
+              class="text-6xl font-extrabold text-[var(--color-secondary)] mb-2"
+            >
+              15+ Apps
+            </div>
+            <div class="text-xl text-gray-700 font-medium">
+              Portfólio de Produtos B2C
+            </div>
+          </div>
+          <div class="text-center metric-card p-6 bg-pink-50 rounded-xl">
+            <div
+              class="text-6xl font-extrabold text-[var(--color-accent1)] mb-2"
+            >
+              80% B2C
+            </div>
+            <div class="text-xl text-gray-700 font-medium">
+              Dominância da Receita Interna
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: FOCO - TEAM & AUTOMATION (A Mensagem Chave) -->
+      <section
+        class="rounded-3xl shadow-2xl p-12 mb-16 key-section-highlight"
+        data-delay="2"
+      >
+        <h2
+          class="text-5xl font-bold text-[var(--color-accent3)] mb-10 text-center"
+        >
+          ⚙️ A Transformação do Time Dev: Eficiência Através da Automação
+        </h2>
+        <p class="text-2xl text-center text-gray-700 mb-10 max-w-5xl mx-auto">
+          Nossa meta é ambiciosa:
+          <strong>6 pessoas gerenciando 15+ Apps</strong> até 2030. Isso só é
+          possível automatizando
+          <strong>90% da manutenção e infraestrutura</strong>. Esta é nossa
+          prioridade técnica e o caminho para a independência financeira.
+        </p>
+
+        <!-- Evolução da Capacidade Produtiva -->
+        <div class="mb-12">
+          <h3
+            class="text-3xl font-bold text-[var(--color-primary)] mb-6 text-center"
+          >
+            📊 Evolução da Capacidade Produtiva (2026-2031)
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-center">
+            <div class="bg-blue-50 p-5 rounded-xl border-2 border-blue-300">
+              <div class="text-xl font-bold text-blue-900 mb-2">2026</div>
+              <div class="text-3xl font-extrabold text-blue-700 mb-1">
+                6 pessoas
+              </div>
+              <div class="text-sm text-gray-700">1 Projeto B2B</div>
+              <div class="text-xs text-gray-500 mt-2">(Validação)</div>
+            </div>
+            <div class="bg-indigo-50 p-5 rounded-xl border-2 border-indigo-300">
+              <div class="text-xl font-bold text-indigo-900 mb-2">2027</div>
+              <div class="text-3xl font-extrabold text-indigo-700 mb-1">
+                6 pessoas
+              </div>
+              <div class="text-sm text-gray-700">4 B2B + 3 Apps</div>
+              <div class="text-xs text-gray-500 mt-2">(Crescimento)</div>
+            </div>
+            <div class="bg-pink-50 p-5 rounded-xl border-2 border-pink-300">
+              <div class="text-xl font-bold text-pink-900 mb-2">2028</div>
+              <div class="text-3xl font-extrabold text-pink-700 mb-1">
+                6 pessoas
+              </div>
+              <div class="text-sm text-gray-700">2 B2B + 4 Apps</div>
+              <div class="text-xs text-gray-500 mt-2">(Breakthrough)</div>
+            </div>
+            <div class="bg-orange-50 p-5 rounded-xl border-2 border-orange-300">
+              <div class="text-xl font-bold text-orange-900 mb-2">2029</div>
+              <div class="text-3xl font-extrabold text-orange-700 mb-1">
+                6 pessoas
+              </div>
+              <div class="text-sm text-gray-700">2 B2B + 9 Apps</div>
+              <div class="text-xs text-gray-500 mt-2">(Marketing)</div>
+            </div>
+            <div class="bg-green-50 p-5 rounded-xl border-4 border-green-500">
+              <div class="text-xl font-bold text-green-900 mb-2">2030+</div>
+              <div class="text-3xl font-extrabold text-green-700 mb-1">
+                5-6 pessoas
+              </div>
+              <div class="text-sm text-gray-700">1 B2B + 15 Apps</div>
+              <div class="text-xs text-gray-500 mt-2">(Independência)</div>
+            </div>
+          </div>
+          <p class="text-center text-lg text-gray-600 mt-6 font-medium">
+            <strong>Resultado:</strong> 15x mais capacidade produtiva com o
+            mesmo time! 🚀
+          </p>
+        </div>
+
+        <!-- Pilares de Automação -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Coluna 1: Pilares Técnicos -->
+          <div>
+            <h3
+              class="text-3xl font-semibold text-[var(--color-secondary)] mb-6 border-b-4 border-dashed pb-2"
+            >
+              🔧 5 Pilares Técnicos para Escalar
+            </h3>
+            <div class="space-y-4">
+              <div
+                class="bg-white p-4 rounded-lg shadow border-l-4 border-[var(--color-primary)]"
+              >
+                <div class="flex items-center mb-2">
+                  <span class="text-2xl mr-3">🚀</span>
+                  <strong class="text-lg">1. CI/CD Total</strong>
+                </div>
+                <p class="text-sm text-gray-700 pl-9">
+                  Deploy automatizado em 5 minutos (vs. 4h manual). Pipeline
+                  completo de build, testes e produção.
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg shadow border-l-4 border-[var(--color-secondary)]"
+              >
+                <div class="flex items-center mb-2">
+                  <span class="text-2xl mr-3">🧪</span>
+                  <strong class="text-lg">2. Testes Automatizados</strong>
+                </div>
+                <p class="text-sm text-gray-700 pl-9">
+                  >80% cobertura com Jest, Cypress e Playwright. QA de 40h → 2h
+                  por sprint.
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg shadow border-l-4 border-[var(--color-accent1)]"
+              >
+                <div class="flex items-center mb-2">
+                  <span class="text-2xl mr-3">🐳</span>
+                  <strong class="text-lg">3. IaC & Templates</strong>
+                </div>
+                <p class="text-sm text-gray-700 pl-9">
+                  Infraestrutura como código (Docker/K8s). Setup de novo
+                  projeto: 1 semana → 2 dias.
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg shadow border-l-4 border-[var(--color-accent2)]"
+              >
+                <div class="flex items-center mb-2">
+                  <span class="text-2xl mr-3">🛡️</span>
+                  <strong class="text-lg">4. Monitoramento 24/7</strong>
+                </div>
+                <p class="text-sm text-gray-700 pl-9">
+                  Sentry + Prometheus + Grafana. Uptime 99.9% (zero downtime)
+                  para 15+ apps.
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg shadow border-l-4 border-[var(--color-accent3)]"
+              >
+                <div class="flex items-center mb-2">
+                  <span class="text-2xl mr-3">📦</span>
+                  <strong class="text-lg">5. Componentes Reutilizáveis</strong>
+                </div>
+                <p class="text-sm text-gray-700 pl-9">
+                  Design System + Storybook. Reuso de ~70% do código base entre
+                  projetos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Métricas e ROI -->
+          <div>
+            <h3
+              class="text-3xl font-semibold text-[var(--color-secondary)] mb-6 border-b-4 border-dashed pb-2"
+            >
+              📈 O ROI da Automação
+            </h3>
+
+            <!-- Ganhos de Eficiência -->
+            <div class="mb-6">
+              <h4 class="text-xl font-semibold text-gray-800 mb-3">
+                Ganhos de Eficiência
+              </h4>
+              <div class="space-y-3">
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-semibold">Deploy Time</span>
+                    <span class="text-2xl font-bold text-green-700">98% ↓</span>
+                  </div>
+                  <div class="text-xs text-gray-600">4 horas → 5 minutos</div>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-semibold">QA Time</span>
+                    <span class="text-2xl font-bold text-green-700">95% ↓</span>
+                  </div>
+                  <div class="text-xs text-gray-600">
+                    40 horas → 2 horas (por sprint)
+                  </div>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-semibold">Setup Projeto</span>
+                    <span class="text-2xl font-bold text-green-700">70% ↓</span>
+                  </div>
+                  <div class="text-xs text-gray-600">1 semana → 2 dias</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Capacidade Multiplicada -->
+            <div
+              class="bg-gradient-to-r from-amber-50 to-orange-50 border-4 border-[var(--color-accent3)] rounded-xl p-6"
+            >
+              <h4
+                class="text-2xl font-bold text-[var(--color-accent3)] mb-4 text-center"
+              >
+                💰 Impacto Final
+              </h4>
+              <div class="space-y-3 text-center">
+                <div>
+                  <div
+                    class="text-5xl font-extrabold text-[var(--color-accent3)]"
+                  >
+                    15x
+                  </div>
+                  <div class="text-sm font-semibold text-gray-700">
+                    Multiplicador de Capacidade
+                  </div>
+                  <div class="text-xs text-gray-600 mt-1">
+                    1 projeto → 15 apps
+                  </div>
+                </div>
+                <div
+                  class="border-t-2 border-dashed border-orange-300 pt-3 mt-3"
+                >
+                  <div class="text-3xl font-extrabold text-green-700">
+                    R$ 6M+
+                  </div>
+                  <div class="text-sm font-semibold text-gray-700">
+                    ARR em 2031
+                  </div>
+                  <div class="text-xs text-gray-600 mt-1">
+                    80% receita passiva (B2C)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mensagem Final -->
+        <div
+          class="mt-10 bg-white p-6 rounded-xl border-l-8 border-[var(--color-accent3)]"
+        >
+          <p class="text-xl text-center text-gray-800 font-semibold">
+            <span class="text-[var(--color-accent3)]">🎯 Regra de Ouro:</span>
+            Se você fez algo <strong>duas vezes</strong>, automatize na
+            terceira! Esta disciplina nos libertará da manutenção e criará a
+            base para nossa independência.
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: LINHA DO TEMPO COMPLETA (DETALHADA) -->
+      <section
+        class="mb-16 bg-white rounded-3xl shadow-2xl p-10"
+        data-delay="3"
+      >
+        <h2
+          class="text-5xl font-bold text-[var(--color-primary)] mb-10 text-center"
+        >
+          📅 Linha do Tempo Detalhada: De 2025 à Independência
+        </h2>
+
+        <div class="relative max-w-4xl mx-auto">
+          <!-- 2025: Preparation (Concluído) -->
+          <div class="timeline-item" data-delay="1">
+            <div class="timeline-dot border-[var(--color-primary)]"></div>
+            <div class="timeline-line"></div>
+            <div class="bg-gray-50 rounded-2xl shadow-lg p-6">
+              <h3 class="text-2xl font-bold text-[var(--color-primary)] mb-2">
+                🛠️ 2025: Ano de Fundação (Concluído)
+              </h3>
+              <p class="text-lg text-gray-700 font-semibold mb-3">
+                Foco: Preparação Estrutural e Técnica.
+              </p>
+              <ul class="space-y-1 text-sm text-gray-600">
+                <li>✅ Setup de infraestrutura (Vercel, Railway, GitHub)</li>
+                <li>
+                  ✅ Implementação de processos de qualidade (CI/CD, Testes)
+                </li>
+                <li>✅ Definição dos 15 conceitos de Apps internos</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2026: Início da Execução & Caixa -->
+          <div class="timeline-item" data-delay="2">
+            <div class="timeline-dot border-[var(--color-secondary)]"></div>
+            <div class="timeline-line"></div>
+            <div
+              class="bg-white rounded-2xl shadow-lg p-6 border-4 border-dashed border-[var(--color-secondary)]"
+            >
+              <h3 class="text-2xl font-bold text-[var(--color-secondary)] mb-2">
+                🚀 2026: Início da Execução & Caixa (Fase 1)
+              </h3>
+              <p class="text-lg text-gray-700 font-semibold mb-3">
+                Meta: **Validar Metodologia B2B** (R$ 180K) e atingir o salário
+                fixo por pessoa (R$ 2.000/mês).
+              </p>
+              <ul class="space-y-1 text-sm text-gray-600">
+                <li>✅ Lançar o primeiro projeto B2B (6 meses)</li>
+                <li>
+                  ✅ Otimizar a eficiência do time baseada em aprendizados
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2027: Growth & Apps -->
+          <div class="timeline-item" data-delay="3">
+            <div class="timeline-dot border-[var(--color-accent1)]"></div>
+            <div class="timeline-line"></div>
+            <div class="bg-gray-50 rounded-2xl shadow-lg p-6">
+              <h3 class="text-2xl font-bold text-[var(--color-accent1)] mb-2">
+                📈 2027: Crescimento e 3 Apps
+              </h3>
+              <p class="text-lg text-gray-700 font-semibold mb-3">
+                Meta: Conquistar 2 Clientes B2B e **Lançar 3 Apps Internos v1**.
+              </p>
+              <ul class="space-y-1 text-sm text-gray-600">
+                <li>📱 App 1: Utilitário Simples (Q1-Q2)</li>
+                <li>📱 App 2: Produtividade (Q2-Q3)</li>
+                <li>📱 App 3: Social/Comunidade (Q3-Q4)</li>
+                <li>💰 Receita Apps: R$ 15.000/mês</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2028: Breakthrough -->
+          <div class="timeline-item" data-delay="4">
+            <div class="timeline-dot border-[var(--color-accent2)]"></div>
+            <div class="timeline-line"></div>
+            <div
+              class="bg-white rounded-2xl shadow-lg p-6 border-4 border-dashed border-[var(--color-accent2)]"
+            >
+              <h3 class="text-2xl font-bold text-[var(--color-accent2)] mb-2">
+                💥 2028: O Ano da Virada (Breakthrough)
+              </h3>
+              <p class="text-lg text-gray-700 font-semibold mb-3">
+                Meta: **1 app interno de enorme sucesso** (nível Tinder/Netflix)
+                e alcançar **independência de clientes externos**.
+              </p>
+              <ul class="space-y-1 text-sm text-gray-600">
+                <li>🚀 1 app interno atinge sucesso massivo e viralização.</li>
+                <li>💼 Salário mensal fixo para todos os membros da equipe.</li>
+                <li>✅ 80% da receita vem de B2C (independência).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2029: Marketing & Expansion -->
+          <div class="timeline-item" data-delay="5">
+            <div class="timeline-dot border-[var(--color-accent3)]"></div>
+            <div class="timeline-line"></div>
+            <div class="bg-gray-50 rounded-2xl shadow-lg p-6">
+              <h3 class="text-2xl font-bold text-[var(--color-accent3)] mb-2">
+                📢 2029: Marketing e 9 Apps
+              </h3>
+              <p class="text-lg text-gray-700 font-semibold mb-3">
+                Meta: Aumentar a visibilidade da marca e expandir o portfólio
+                para 9 Apps.
+              </p>
+              <ul class="space-y-1 text-sm text-gray-600">
+                <li>✅ 50.000+ Seguidores.</li>
+                <li>
+                  📱 Lançar App 5, 6, 7, 8, 9 (Educação, E-commerce, Saúde,
+                  Finanças, Entretenimento).
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2030: Optimization (Portfólio Completo) -->
+          <div class="timeline-item" data-delay="6">
+            <div class="timeline-dot border-gray-600"></div>
+            <div class="timeline-line"></div>
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+              <h3 class="text-2xl font-bold text-gray-700 mb-2">
+                ⚙️ 2030: Otimização & 15 Apps
+              </h3>
+              <p class="text-lg text-gray-700 font-semibold mb-3">
+                Meta: Portfólio de **15 Apps** completo e domínio da eficiência
+                operacional.
+              </p>
+              <ul class="space-y-1 text-sm text-gray-600">
+                <li>
+                  📱 Lançar Apps 10 a 15 (AI, Comunicação, Gaming, Business,
+                  Lifestyle, Experimental).
+                </li>
+                <li>
+                  ✅ Reduzir o time de manutenção (5-6 pessoas) graças à
+                  Automação.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2031: Independence -->
+          <div class="timeline-item" data-delay="7">
+            <div class="timeline-dot border-green-600"></div>
+            <div class="bg-gray-50 rounded-2xl shadow-lg p-6">
+              <h3 class="text-2xl font-bold text-green-700 mb-2">
+                🏆 2031: Independência Financeira
+              </h3>
+              <p class="text-lg text-gray-700 font-semibold mb-3">
+                Meta: **R$ 6M+ ARR** garantido primariamente por receita
+                passiva.
+              </p>
+              <ul class="space-y-1 text-sm text-gray-600">
+                <li>✅ Renda passiva garantida.</li>
+                <li>
+                  ✅ Oportunidade de expansão (Apps 16+) ou aposentadoria
+                  estratégica.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: PROGRESSÃO FINANCEIRA -->
+      <section
+        class="bg-white rounded-3xl shadow-2xl p-10 mb-16"
+        data-delay="4"
+      >
+        <h2
+          class="text-5xl font-bold text-[var(--color-primary)] mb-10 text-center"
+        >
+          📈 A Progressão da Receita (O Impacto da Automação)
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h3
+              class="text-2xl font-semibold text-[var(--color-secondary)] mb-6 text-center"
+            >
+              Crescimento Anual da Receita (em Milhões de R$)
+            </h3>
+            <div class="chart-container">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+          <div>
+            <h3
+              class="text-2xl font-semibold text-[var(--color-secondary)] mb-6 text-center"
+            >
+              Evolução da Receita B2C vs B2B - 3 Cenários (%)
+            </h3>
+            <div class="chart-container">
+              <canvas id="revenueMixChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-xl text-gray-600 mt-8 font-medium">
+          Cada linha mostra a evolução da participação B2C na receita ao longo
+          dos anos. O
+          <strong class="text-[var(--color-primary)]"
+            >Cenário Realista ⭐</strong
+          >
+          é nosso alvo principal, destacado com linha mais espessa e ponto
+          maior.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 text-center text-sm"
+        >
+          <div class="bg-green-50 p-3 rounded-lg border-2 border-green-500">
+            <div
+              class="font-bold text-green-700 flex items-center justify-center gap-2"
+            >
+              <div class="w-4 h-4 bg-green-500 rounded"></div>
+              🚀 Otimista
+            </div>
+            <div class="text-xs text-gray-600">
+              Breakthrough rápido + crescimento acelerado
+            </div>
+          </div>
+          <div
+            class="bg-blue-50 p-3 rounded-lg border-4 border-[var(--color-primary)]"
+          >
+            <div
+              class="font-bold text-[var(--color-primary)] flex items-center justify-center gap-2"
+            >
+              <div class="w-4 h-4 bg-[var(--color-primary)] rounded"></div>
+              🎯 Realista ⭐ (Meta)
+            </div>
+            <div class="text-xs text-gray-600">
+              Crescimento sustentável com automação
+            </div>
+          </div>
+          <div class="bg-red-50 p-3 rounded-lg border-2 border-red-500">
+            <div
+              class="font-bold text-red-700 flex items-center justify-center gap-2"
+            >
+              <div class="w-4 h-4 bg-red-500 rounded"></div>
+              ⚠️ Pessimista
+            </div>
+            <div class="text-xs text-gray-600">
+              Apps demoram a ganhar tração
+            </div>
+          </div>
+        </div>
+
+        <!-- Detalhamento dos Cenários -->
+        <div class="mt-8 bg-gray-50 rounded-xl p-6">
+          <h4
+            class="text-lg font-bold text-[var(--color-primary)] mb-4 text-center"
+          >
+            📊 Detalhamento dos Cenários de Transição B2B → B2C
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div>
+              <div class="font-bold text-green-700 mb-2">🚀 Otimista</div>
+              <ul class="space-y-1 text-xs text-gray-700">
+                <li><strong>2027:</strong> 20% B2C (Apps começam bem)</li>
+                <li><strong>2028:</strong> 80% B2C (Breakthrough rápido)</li>
+                <li>
+                  <strong>2031:</strong> 80% B2C (Dominância estabelecida)
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-bold text-[var(--color-primary)] mb-2">
+                🎯 Realista (Meta)
+              </div>
+              <ul class="space-y-1 text-xs text-gray-700">
+                <li><strong>2027:</strong> 15% B2C (Lançamento 3 apps)</li>
+                <li><strong>2028:</strong> 40% B2C (Crescimento gradual)</li>
+                <li>
+                  <strong>2031:</strong> 70% B2C (Independência alcançada)
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-bold text-red-700 mb-2">⚠️ Pessimista</div>
+              <ul class="space-y-1 text-xs text-gray-700">
+                <li><strong>2027:</strong> 10% B2C (Tração lenta)</li>
+                <li><strong>2028:</strong> 25% B2C (Crescimento modesto)</li>
+                <li><strong>2031:</strong> 50% B2C (B2B ainda relevante)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: DETALHE DO PORTFÓLIO E KPIS -->
+      <section
+        class="bg-white rounded-3xl shadow-2xl p-10 mb-16"
+        data-delay="5"
+      >
+        <h2
+          class="text-5xl font-bold text-[var(--color-primary)] mb-10 text-center"
+        >
+          📱 Portfolio e Métricas de Sucesso (KPIs)
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h3
+              class="text-2xl font-semibold text-[var(--color-secondary)] mb-6 text-center"
+            >
+              Crescimento do Portfólio Interno (Apps)
+            </h3>
+            <div class="chart-container">
+              <canvas id="appGrowthChart"></canvas>
+            </div>
+          </div>
+          <div>
+            <h3
+              class="text-2xl font-semibold text-[var(--color-secondary)] mb-6 text-center"
+            >
+              Receita Mensal dos Apps (R$)
+            </h3>
+            <div class="chart-container">
+              <canvas id="appRevenueChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3
+            class="text-3xl font-semibold text-[var(--color-primary)] mb-6 border-b-2 pb-2"
+          >
+            Indicadores Chave Ano a Ano
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-lg">
+            <div class="bg-green-50 p-4 rounded-lg">
+              <div class="font-bold text-green-800">2026:</div>
+              <p class="text-sm">✅ Primeira Sucesso B2B</p>
+              <p class="text-sm">✅ R$ 5,000/mês por pessoa atingido</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <div class="font-bold text-green-800">2028:</div>
+              <p class="text-sm">✅ App Breakthrough lançado</p>
+              <p class="text-sm">✅ 80% B2C revenue (Independência)</p>
+            </div>
+            <div class="bg-green-50 p-4 rounded-lg">
+              <div class="font-bold text-green-800">2031:</div>
+              <p class="text-sm">✅ R$ 6M+ ARR</p>
+              <p class="text-sm">✅ 15+ Apps em Produção</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: RISCO E CONTINGÊNCIA -->
+      <section
+        class="bg-white rounded-3xl shadow-2xl p-10 mb-16"
+        data-delay="6"
+      >
+        <h2
+          class="text-5xl font-bold text-[var(--color-primary)] mb-10 text-center"
+        >
+          ⚠️ Gestão de Risco e Contingência
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Risco 1: App Failure -->
+          <div
+            class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg metric-card"
+          >
+            <h3 class="text-xl font-semibold text-[var(--color-accent2)] mb-2">
+              🚨 App de Ruptura Falhar (2028)
+            </h3>
+            <p class="text-sm text-gray-700 mb-2">
+              <strong>Risco:</strong> Nenhum app interno atinge o sucesso
+              massivo esperado.
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+              <li>
+                Múltiplos conceitos de Apps (15 no total) aumentam chances.
+              </li>
+              <li>Manter B2B como fallback (20-40% receita).</li>
+              <li>Iteração rápida baseada em feedback de mercado.</li>
+            </ul>
+          </div>
+          <!-- Risco 2: Team Departure -->
+          <div
+            class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg metric-card"
+          >
+            <h3 class="text-xl font-semibold text-[var(--color-accent2)] mb-2">
+              🚨 Saída de Membro Chave
+            </h3>
+            <p class="text-sm text-gray-700 mb-2">
+              <strong>Risco:</strong> Perda de conhecimento e capacidade
+              produtiva.
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+              <li>Cross-training (todos sabem de tudo).</li>
+              <li>Documentação completa de processos.</li>
+            </ul>
+          </div>
+          <!-- Risco 3: Market Competition -->
+          <div
+            class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg metric-card"
+          >
+            <h3 class="text-xl font-semibold text-[var(--color-accent2)] mb-2">
+              🚨 Competição de Mercado
+            </h3>
+            <p class="text-sm text-gray-700 mb-2">
+              <strong>Risco:</strong> Concorrentes copiam o App principal.
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+              <li>Inovação contínua (novas features).</li>
+              <li>Branding e Marketing agressivo (2029).</li>
+            </ul>
+          </div>
+          <!-- Risco 4: Economic Downturn -->
+          <div
+            class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg metric-card"
+          >
+            <h3 class="text-xl font-semibold text-[var(--color-accent2)] mb-2">
+              🚨 Recessão Econômica
+            </h3>
+            <p class="text-sm text-gray-700 mb-2">
+              <strong>Risco:</strong> Clientes B2B cortam orçamentos.
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+              <li>Diversificação B2C (menor dependência).</li>
+              <li>Otimização de custos via Automação.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: MICRO PLANNING E FOCO ESTRATÉGICO -->
+      <section
+        class="bg-white rounded-3xl shadow-2xl p-10 mb-16"
+        data-delay="7"
+      >
+        <h2
+          class="text-5xl font-bold text-[var(--color-primary)] mb-10 text-center"
+        >
+          📋 Micro Planning: Detalhe dos Nossos Projetos
+        </h2>
+
+        <!-- Matriz de Priorização -->
+        <div class="mb-12">
+          <div
+            class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border-4 border-[var(--color-primary)]"
+          >
+            <h3
+              class="text-4xl font-bold text-[var(--color-primary)] mb-6 text-center"
+            >
+              🎯 Matriz de Priorização de Ideias (Risco x Recompensa)
+            </h3>
+            <p class="text-center text-xl text-gray-700 mb-2 font-semibold">
+              <span class="text-[var(--color-primary)]"
+                >Estratégia de Investimento:</span
+              >
+              Onde alocar nossos recursos?
+            </p>
+            <p class="text-center text-lg text-gray-600 mb-8">
+              O eixo vertical (Receita) é o que buscamos, o eixo horizontal
+              (Facilidade) é o que usamos para priorizar.
+              <br /><strong>Tamanho da bolha = Tamanho do Mercado</strong>
+            </p>
+
+            <!-- Chart Container with Enhanced Styling -->
+            <div
+              class="bg-white rounded-xl p-6 shadow-lg border-2 border-gray-200"
+            >
+              <div class="chart-container h-[500px]">
+                <canvas id="prioritizationChart"></canvas>
+              </div>
+            </div>
+
+            <!-- Legend with Enhanced Project Details -->
+            <div
+              class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              <div
+                class="bg-white p-4 rounded-lg border-l-4 border-[var(--color-primary)] shadow-md"
+              >
+                <div class="flex items-center mb-2">
+                  <div
+                    class="w-4 h-4 bg-[var(--color-primary)] rounded-full mr-3"
+                  ></div>
+                  <h4 class="font-bold text-[var(--color-primary)]">
+                    Apps de Restaurantes
+                  </h4>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">
+                  🎯 <strong>Foco Principal 2026</strong>
+                </p>
+                <p class="text-xs text-gray-500">
+                  Facilidade: 7/10 | Potencial: 9/10 | Mercado: 10/10
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  B2B com ROI comprovado, baixo risco, alta receita recorrente
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg border-l-4 border-[var(--color-secondary)] shadow-md"
+              >
+                <div class="flex items-center mb-2">
+                  <div
+                    class="w-4 h-4 bg-[var(--color-secondary)] rounded-full mr-3"
+                  ></div>
+                  <h4 class="font-bold text-[var(--color-secondary)]">
+                    VotaAI
+                  </h4>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">
+                  🤖 <strong>Produto B2C</strong>
+                </p>
+                <p class="text-xs text-gray-500">
+                  Facilidade: 8/10 | Potencial: 7.5/10 | Mercado: 7/10
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  App de produtividade com IA, mercado em crescimento
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg border-l-4 border-[var(--color-accent1)] shadow-md"
+              >
+                <div class="flex items-center mb-2">
+                  <div
+                    class="w-4 h-4 bg-[var(--color-accent1)] rounded-full mr-3"
+                  ></div>
+                  <h4 class="font-bold text-[var(--color-accent1)]">
+                    Sites de Portfólio
+                  </h4>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">
+                  💼 <strong>Suporte B2B</strong>
+                </p>
+                <p class="text-xs text-gray-500">
+                  Facilidade: 9/10 | Potencial: 3/10 | Mercado: 5/10
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  Baixo esforço, receita recorrente de hosting
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg border-l-4 border-[var(--color-accent2)] shadow-md"
+              >
+                <div class="flex items-center mb-2">
+                  <div
+                    class="w-4 h-4 bg-[var(--color-accent2)] rounded-full mr-3"
+                  ></div>
+                  <h4 class="font-bold text-[var(--color-accent2)]">
+                    Dropshipping
+                  </h4>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">
+                  🧪 <strong>Laboratório</strong>
+                </p>
+                <p class="text-xs text-gray-500">
+                  Facilidade: 8.5/10 | Potencial: 5/10 | Mercado: 8/10
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  Experimento para aprender e-commerce e marketing
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-4 rounded-lg border-l-4 border-[var(--color-accent3)] shadow-md"
+              >
+                <div class="flex items-center mb-2">
+                  <div
+                    class="w-4 h-4 bg-[var(--color-accent3)] rounded-full mr-3"
+                  ></div>
+                  <h4 class="font-bold text-[var(--color-accent3)]">
+                    App de Ruptura
+                  </h4>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">
+                  🚀 <strong>A Grande Aposta</strong>
+                </p>
+                <p class="text-xs text-gray-500">
+                  Facilidade: 4/10 | Potencial: 10/10 | Mercado: 10/10
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  Alto risco, alta recompensa - o app que pode mudar tudo
+                </p>
+              </div>
+
+              <div
+                class="bg-gray-100 p-4 rounded-lg border-2 border-dashed border-gray-300"
+              >
+                <div class="text-center">
+                  <h4 class="font-bold text-gray-600 mb-2">
+                    💡 Próximas Ideias
+                  </h4>
+                  <p class="text-xs text-gray-500">
+                    Espaço para novos projetos que surgirem durante a execução
+                  </p>
+                  <p class="text-xs text-gray-400 mt-2">
+                    15 conceitos mapeados, 5 em priorização
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strategic Insights -->
+            <div
+              class="mt-8 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white p-6 rounded-xl"
+            >
+              <h4 class="text-2xl font-bold mb-4 text-center">
+                📊 Insights Estratégicos
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                  <div class="text-2xl font-bold mb-2">🎯 Foco 2026</div>
+                  <p class="text-sm">
+                    Apps de Restaurantes = 80% do esforço para gerar caixa
+                    inicial
+                  </p>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                  <div class="text-2xl font-bold mb-2">⚖️ Balanceamento</div>
+                  <p class="text-sm">
+                    3 projetos fáceis + 1 grande aposta = portfólio equilibrado
+                  </p>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                  <div class="text-2xl font-bold mb-2">🚀 Crescimento</div>
+                  <p class="text-sm">
+                    App de Ruptura pode acelerar independência em 2-3 anos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foco Estratégico e Processo de Vendas (B2B) -->
+        <div class="mt-12">
+          <div
+            class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 border-4 border-[var(--color-secondary)]"
+          >
+            <h3
+              class="text-4xl font-bold text-[var(--color-secondary)] mb-6 text-center"
+            >
+              🎯 Foco Estratégico: Nossos Motores Iniciais (2026)
+            </h3>
+            <p class="text-center text-xl text-gray-700 mb-2 font-semibold">
+              <span class="text-[var(--color-secondary)]"
+                >Estratégia de Execução:</span
+              >
+              Como vamos gerar R$ 180K em 2026?
+            </p>
+            <p class="text-center text-lg text-gray-600 mb-8">
+              Três motores complementares que trabalham em sinergia para
+              construir nossa base financeira e conhecimento técnico.
+            </p>
+
+            <!-- Motor 1: Apps de Restaurantes (Principal) -->
+            <div
+              class="bg-white rounded-xl p-6 shadow-lg border-2 border-[var(--color-primary)] mb-8"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="bg-[var(--color-primary)] text-white p-3 rounded-full mr-4"
+                >
+                  <span class="text-2xl">🚀</span>
+                </div>
+                <div>
+                  <h4 class="text-3xl font-bold text-[var(--color-primary)]">
+                    Apps de Restaurantes: (80% Foco ARR)
+                  </h4>
+                  <p class="text-lg text-gray-600">
+                    O Motor Principal - R$ 144K em 2026
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Strategic Details -->
+                <div>
+                  <h5 class="text-xl font-semibold text-gray-800 mb-4">
+                    📋 Estratégia de Execução
+                  </h5>
+                  <div class="space-y-3">
+                    <div
+                      class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500"
+                    >
+                      <h6 class="font-semibold text-blue-800">
+                        🎯 Proposta de Valor
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        Sistema completo que reduz custos operacionais em 25% e
+                        aumenta giro de mesas em 15%
+                      </p>
+                    </div>
+                    <div
+                      class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500"
+                    >
+                      <h6 class="font-semibold text-green-800">
+                        💰 Modelo de Receita
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        R$ 2.500/mês por restaurante + setup inicial R$ 15K
+                      </p>
+                    </div>
+                    <div
+                      class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500"
+                    >
+                      <h6 class="font-semibold text-purple-800">
+                        📈 Meta de Clientes
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        8 restaurantes até dezembro 2026 = R$ 144K ARR
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Implementation Timeline -->
+                  <div class="mt-6">
+                    <h6 class="font-semibold text-gray-800 mb-3">
+                      ⏱️ Timeline de Implementação
+                    </h6>
+                    <div class="space-y-2 text-sm">
+                      <div
+                        class="flex justify-between items-center bg-gray-50 p-2 rounded"
+                      >
+                        <span
+                          ><strong>Q1 2026:</strong> MVP + 2 clientes
+                          piloto</span
+                        >
+                        <span class="text-green-600 font-bold">R$ 30K</span>
+                      </div>
+                      <div
+                        class="flex justify-between items-center bg-gray-50 p-2 rounded"
+                      >
+                        <span
+                          ><strong>Q2 2026:</strong> Refinamento + 2
+                          clientes</span
+                        >
+                        <span class="text-green-600 font-bold">R$ 60K</span>
+                      </div>
+                      <div
+                        class="flex justify-between items-center bg-gray-50 p-2 rounded"
+                      >
+                        <span
+                          ><strong>Q3-Q4 2026:</strong> Escala + 4
+                          clientes</span
+                        >
+                        <span class="text-green-600 font-bold">R$ 144K</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chart -->
+                <div>
+                  <h5 class="text-xl font-semibold text-gray-800 mb-4">
+                    📊 Proposta de Valor (ROI)
+                  </h5>
+                  <div class="chart-container h-[300px]">
+                    <canvas id="restaurantAppChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Motor 2: Sites de Portfólio (Suporte) -->
+            <div
+              class="bg-white rounded-xl p-6 shadow-lg border-2 border-[var(--color-accent1)] mb-8"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="bg-[var(--color-accent1)] text-white p-3 rounded-full mr-4"
+                >
+                  <span class="text-2xl">🌐</span>
+                </div>
+                <div>
+                  <h4 class="text-3xl font-bold text-[var(--color-accent1)]">
+                    Sites de Portfólio: (20% Suporte)
+                  </h4>
+                  <p class="text-lg text-gray-600">
+                    O Motor de Margem - R$ 36K em 2026
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Strategic Details -->
+                <div>
+                  <h5 class="text-xl font-semibold text-gray-800 mb-4">
+                    📋 Estratégia de Execução
+                  </h5>
+                  <div class="space-y-3">
+                    <div
+                      class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500"
+                    >
+                      <h6 class="font-semibold text-pink-800">
+                        🎯 Proposta de Valor
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        Sites profissionais com alta margem de hosting (80%
+                        margem líquida)
+                      </p>
+                    </div>
+                    <div
+                      class="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500"
+                    >
+                      <h6 class="font-semibold text-indigo-800">
+                        💰 Modelo de Receita
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        R$ 3K setup + R$ 500/mês hosting = R$ 9K/ano por cliente
+                      </p>
+                    </div>
+                    <div
+                      class="bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500"
+                    >
+                      <h6 class="font-semibold text-teal-800">
+                        📈 Meta de Clientes
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        4 clientes até dezembro 2026 = R$ 36K ARR
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Value Proposition -->
+                  <div class="mt-6">
+                    <h6 class="font-semibold text-gray-800 mb-3">
+                      💡 Por que Funciona?
+                    </h6>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                      <li>
+                        • <strong>Baixo esforço:</strong> 1 semana de
+                        desenvolvimento
+                      </li>
+                      <li>
+                        • <strong>Alta margem:</strong> 80% margem líquida no
+                        hosting
+                      </li>
+                      <li>
+                        • <strong>Receita recorrente:</strong> Clientes pagam
+                        mensalmente
+                      </li>
+                      <li>
+                        • <strong>Porta de entrada:</strong> Pode gerar leads
+                        para apps de restaurante
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Chart -->
+                <div>
+                  <h5 class="text-xl font-semibold text-gray-800 mb-4">
+                    📊 Esforço vs. Margem
+                  </h5>
+                  <div class="chart-container h-[300px]">
+                    <canvas id="portfolioChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Motor 3: Round Table (Experimental) -->
+            <div
+              class="bg-white rounded-xl p-6 shadow-lg border-2 border-[var(--color-accent2)]"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="bg-[var(--color-accent2)] text-white p-3 rounded-full mr-4"
+                >
+                  <span class="text-2xl">❤️</span>
+                </div>
+                <div>
+                  <h4 class="text-3xl font-bold text-[var(--color-accent2)]">
+                    Round Table: Motor Experimental B2C
+                  </h4>
+                  <p class="text-lg text-gray-600">
+                    O Laboratório de Aprendizado - Investimento em Conhecimento
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Strategic Details -->
+                <div>
+                  <h5 class="text-xl font-semibold text-gray-800 mb-4">
+                    📋 Estratégia de Execução
+                  </h5>
+                  <div class="space-y-3">
+                    <div
+                      class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500"
+                    >
+                      <h6 class="font-semibold text-red-800">
+                        🎯 Proposta de Valor
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        "Tinder de Amigos" - Conectar pessoas em mesas e
+                        comunidades locais
+                      </p>
+                    </div>
+                    <div
+                      class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500"
+                    >
+                      <h6 class="font-semibold text-orange-800">
+                        🎓 Objetivo Principal
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        Aprender B2C: UX/UI, marketing digital, viralização,
+                        monetização
+                      </p>
+                    </div>
+                    <div
+                      class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500"
+                    >
+                      <h6 class="font-semibold text-yellow-800">
+                        🚀 Potencial Breakthrough
+                      </h6>
+                      <p class="text-sm text-gray-700">
+                        Se der certo, pode acelerar independência em 2-3 anos
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Learning Objectives -->
+                  <div class="mt-6">
+                    <h6 class="font-semibold text-gray-800 mb-3">
+                      📚 O que Vamos Aprender?
+                    </h6>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                      <div class="bg-gray-50 p-2 rounded text-center">
+                        <span class="font-semibold text-gray-800"
+                          >UX/UI B2C</span
+                        >
+                      </div>
+                      <div class="bg-gray-50 p-2 rounded text-center">
+                        <span class="font-semibold text-gray-800"
+                          >Marketing Digital</span
+                        >
+                      </div>
+                      <div class="bg-gray-50 p-2 rounded text-center">
+                        <span class="font-semibold text-gray-800"
+                          >Viralização</span
+                        >
+                      </div>
+                      <div class="bg-gray-50 p-2 rounded text-center">
+                        <span class="font-semibold text-gray-800"
+                          >Monetização</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chart -->
+                <div>
+                  <h5 class="text-xl font-semibold text-gray-800 mb-4">
+                    📊 Perfil do Projeto
+                  </h5>
+                  <div class="chart-container h-[300px]">
+                    <canvas id="roundTableChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary & Synergies
+            <div
+              class="mt-8 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white p-6 rounded-xl"
+            >
+              <h4 class="text-2xl font-bold mb-4 text-center">
+                🔄 Sinergias Entre os Motores
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg text-center">
+                  <div class="text-2xl font-bold mb-2">💰 Receita Total</div>
+                  <div class="text-3xl font-extrabold">R$ 180K</div>
+                  <p class="text-sm mt-2">
+                    Meta ARR 2026: Apps (80%) + Sites (20%)
+                  </p>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg text-center">
+                  <div class="text-2xl font-bold mb-2">🎯 Estratégia</div>
+                  <p class="text-sm">B2B gera caixa, B2C ensina futuro</p>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg text-center">
+                  <div class="text-2xl font-bold mb-2">🚀 Resultado</div>
+                  <p class="text-sm">
+                    Base sólida + conhecimento B2C para 2027+
+                  </p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: CELEBRAÇÃO (Para o Encerramento) -->
+      <section
+        class="bg-white rounded-3xl shadow-2xl p-12 mb-16 text-center border-b-8 border-green-500"
+        data-delay="8"
+      >
+        <h2 class="text-6xl font-extrabold text-green-700 mb-6">
+          🍾 Boas Festas e Feliz 2026!
+        </h2>
+        <p class="text-3xl text-gray-700 mb-10">
+          Vocês são a peça chave para esta jornada de 6 anos.
+        </p>
+        <div
+          class="bg-gray-100 p-8 rounded-xl max-w-xl mx-auto border-4 border-gray-300"
+        >
+          <span class="text-7xl">📸</span>
+          <p class="text-2xl font-bold mt-4">
+            Placeholder para a Foto do Time!
+          </p>
+          <p class="text-xl text-gray-500">
+            Obrigado pelo esforço e dedicação. Agora, vamos celebrar!
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- CÓDIGO JAVASCRIPT: Configuração dos Gráficos e Animação -->
+    <script>
+      const colors = {
+        primary: "#003f5c",
+        secondary: "#58508d",
+        accent1: "#bc5090",
+        accent2: "#ff6361",
+        accent3: "#ffa600",
+      };
+
+      // Configuração global para melhorar a legibilidade do Chart.js para apresentação
+      Chart.defaults.font.size = 14;
+      Chart.defaults.font.family = "Inter, sans-serif";
+
+      // Função principal para renderizar todos os gráficos
+      const renderCharts = () => {
+        // --- 1. GRÁFICOS FINANCEIROS (SLIDE 5) ---
+
+        // Gráfico de Crescimento Anual de Receita (3 Cenários)
+        const ctxRevenue = document
+          .getElementById("revenueChart")
+          .getContext("2d");
+        new Chart(ctxRevenue, {
+          type: "line",
+          data: {
+            labels: ["2026", "2027", "2028", "2029", "2030", "2031"],
+            datasets: [
+              {
+                label: "Cenário Otimista",
+                data: [180000, 720000, 2000000, 3000000, 4000000, 6000000],
+                backgroundColor: "rgba(16, 185, 129, 0.1)",
+                borderColor: "#10b981",
+                borderWidth: 3,
+                fill: false,
+                tension: 0.4,
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                borderDash: [],
+              },
+              {
+                label: "Cenário Realista",
+                data: [180000, 500000, 1200000, 2000000, 2800000, 4000000],
+                backgroundColor: "rgba(0, 63, 92, 0.1)",
+                borderColor: colors.primary,
+                borderWidth: 4,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 6,
+                pointHoverRadius: 10,
+              },
+              {
+                label: "Cenário Pessimista",
+                data: [180000, 360000, 800000, 1200000, 1600000, 2200000],
+                backgroundColor: "rgba(239, 68, 68, 0.1)",
+                borderColor: "#ef4444",
+                borderWidth: 3,
+                fill: false,
+                tension: 0.4,
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                borderDash: [5, 5],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                ticks: {
+                  callback: (value) => `R$${value / 1000}k`,
+                  font: { size: 16, weight: "bold" },
+                },
+                title: {
+                  display: true,
+                  text: "Receita (R$)",
+                  font: { size: 18, weight: "bold" },
+                },
+              },
+              x: {
+                ticks: { font: { size: 16, weight: "bold" } },
+              },
+            },
+            plugins: {
+              legend: {
+                display: true,
+                position: "bottom",
+                labels: {
+                  font: { size: 14, weight: "bold" },
+                  usePointStyle: true,
+                  padding: 15,
+                },
+              },
+              title: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    let label = context.dataset.label || "";
+                    if (label) {
+                      label += ": ";
+                    }
+                    label +=
+                      "R$ " + (context.parsed.y / 1000000).toFixed(1) + "M";
+                    return label;
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        // Gráfico de Evolução da Receita B2C vs B2B (3 Cenários) - VERSÃO SIMPLIFICADA
+        const ctxMix = document
+          .getElementById("revenueMixChart")
+          .getContext("2d");
+
+        // Dados simplificados - mostrando apenas B2C % por cenário
+        const scenarioData = {
+          otimista: {
+            label: "🚀 Otimista",
+            data: [0, 20, 80, 85, 75, 80],
+            color: "#10b981",
+            borderColor: "#059669",
+          },
+          realista: {
+            label: "🎯 Realista ⭐",
+            data: [0, 15, 40, 55, 65, 70],
+            color: colors.primary,
+            borderColor: "#002e42",
+          },
+          pessimista: {
+            label: "⚠️ Pessimista",
+            data: [0, 10, 25, 35, 45, 50],
+            color: "#ef4444",
+            borderColor: "#dc2626",
+          },
+        };
+
+        new Chart(ctxMix, {
+          type: "line",
+          data: {
+            labels: ["2026", "2027", "2028", "2029", "2030", "2031"],
+            datasets: [
+              {
+                label: scenarioData.otimista.label,
+                data: scenarioData.otimista.data,
+                backgroundColor: scenarioData.otimista.color + "20",
+                borderColor: scenarioData.otimista.color,
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 6,
+                pointHoverRadius: 10,
+                pointBackgroundColor: scenarioData.otimista.color,
+                pointBorderColor: "#ffffff",
+                pointBorderWidth: 2,
+              },
+              {
+                label: scenarioData.realista.label,
+                data: scenarioData.realista.data,
+                backgroundColor: scenarioData.realista.color + "20",
+                borderColor: scenarioData.realista.color,
+                borderWidth: 4,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 8,
+                pointHoverRadius: 12,
+                pointBackgroundColor: scenarioData.realista.color,
+                pointBorderColor: "#ffffff",
+                pointBorderWidth: 3,
+                borderDash: [],
+              },
+              {
+                label: scenarioData.pessimista.label,
+                data: scenarioData.pessimista.data,
+                backgroundColor: scenarioData.pessimista.color + "20",
+                borderColor: scenarioData.pessimista.color,
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 6,
+                pointHoverRadius: 10,
+                pointBackgroundColor: scenarioData.pessimista.color,
+                pointBorderColor: "#ffffff",
+                pointBorderWidth: 2,
+                borderDash: [5, 5],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+              mode: "index",
+              intersect: false,
+            },
+            scales: {
+              x: {
+                ticks: {
+                  font: { size: 16, weight: "bold" },
+                  color: "#374151",
+                },
+                grid: {
+                  display: false,
+                },
+              },
+              y: {
+                max: 100,
+                min: 0,
+                ticks: {
+                  callback: (value) => value + "%",
+                  font: { size: 16, weight: "bold" },
+                  color: "#374151",
+                },
+                title: {
+                  display: true,
+                  text: "Participação B2C na Receita (%)",
+                  font: { size: 18, weight: "bold" },
+                  color: "#1f2937",
+                },
+                grid: {
+                  color: "#e5e7eb",
+                  lineWidth: 1,
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  font: { size: 14, weight: "bold" },
+                  usePointStyle: true,
+                  pointStyle: "circle",
+                  padding: 20,
+                },
+              },
+              title: { display: false },
+              tooltip: {
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                titleColor: "#ffffff",
+                bodyColor: "#ffffff",
+                borderColor: "#ffffff",
+                borderWidth: 1,
+                cornerRadius: 8,
+                displayColors: true,
+                callbacks: {
+                  title: function (context) {
+                    return `${context[0].label}`;
+                  },
+                  label: function (context) {
+                    const b2cPercent = context.parsed.y;
+                    const b2bPercent = 100 - b2cPercent;
+                    return [`B2C: ${b2cPercent}%`, `B2B: ${b2bPercent}%`];
+                  },
+                  afterLabel: function (context) {
+                    const year = context.label;
+                    const yearIndex = [
+                      "2026",
+                      "2027",
+                      "2028",
+                      "2029",
+                      "2030",
+                      "2031",
+                    ].indexOf(year);
+
+                    // Adicionar contexto sobre a evolução para cenário realista
+                    if (context.dataset.label.includes("Realista")) {
+                      const messages = {
+                        0: "Início - 100% B2B",
+                        1: "Primeiros apps lançados",
+                        2: "Crescimento B2C acelerado",
+                        3: "B2C supera B2B",
+                        4: "Dominância B2C estabelecida",
+                        5: "Meta de independência alcançada",
+                      };
+                      return `📈 ${messages[yearIndex] || ""}`;
+                    }
+                    return "";
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        // --- 2. GRÁFICOS DO PORTFÓLIO (SLIDE 6) ---
+
+        // App Growth Chart (Progression)
+        const ctxApp = document
+          .getElementById("appGrowthChart")
+          .getContext("2d");
+        new Chart(ctxApp, {
+          type: "bar",
+          data: {
+            labels: ["2027", "2028", "2029", "2030"],
+            datasets: [
+              {
+                label: "Internal Apps Lançados",
+                data: [3, 4, 9, 15],
+                backgroundColor: [
+                  colors.secondary,
+                  colors.accent1,
+                  colors.accent2,
+                  colors.accent3,
+                ],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 15,
+                title: {
+                  display: true,
+                  text: "Nº de Apps",
+                  font: { size: 18 },
+                },
+              },
+              x: { ticks: { font: { size: 16 } } },
+            },
+          },
+        });
+
+        // App Revenue Chart (Revenue from Apps)
+        const ctxAppRev = document
+          .getElementById("appRevenueChart")
+          .getContext("2d");
+        new Chart(ctxAppRev, {
+          type: "line",
+          data: {
+            labels: ["2027", "2028", "2029", "2030", "2031"],
+            datasets: [
+              {
+                label: "Receita Mensal dos Apps (R$)",
+                data: [15000, 100000, 150000, 280000, 500000],
+                backgroundColor: "rgba(188, 80, 144, 0.1)",
+                borderColor: colors.accent1,
+                borderWidth: 4,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 6,
+                pointHoverRadius: 10,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                ticks: {
+                  callback: (value) => `R$${value / 1000}k`,
+                  font: { size: 16 },
+                },
+                title: {
+                  display: true,
+                  text: "Receita Mensal (R$)",
+                  font: { size: 18 },
+                },
+              },
+              x: { ticks: { font: { size: 16 } } },
+            },
+            plugins: {
+              legend: { display: false },
+            },
+          },
+        });
+
+        // --- 3. GRÁFICOS DE MICRO PLANNING (SLIDE 8) ---
+
+        // Matriz de Priorização (Bubble Chart)
+        const ctxPrioritization = document
+          .getElementById("prioritizationChart")
+          .getContext("2d");
+        const projectsData = [
+          {
+            label: "Apps de Restaurantes",
+            ease: 7,
+            potential: 9,
+            marketSize: 10,
+            color: colors.primary,
+          },
+          {
+            label: "VotaAI",
+            ease: 8,
+            potential: 7.5,
+            marketSize: 7,
+            color: colors.secondary,
+          },
+          {
+            label: "Sites de Portfólio (Hosting)",
+            ease: 9,
+            potential: 3,
+            marketSize: 5,
+            color: colors.accent1,
+          },
+          {
+            label: "Dropshipping de Roupa (Laboratório)",
+            ease: 8.5,
+            potential: 5,
+            marketSize: 8,
+            color: colors.accent2,
+          },
+          {
+            label: "App de Ruptura (Breakthrough - A Grande Aposta)",
+            ease: 4,
+            potential: 10, // Maximizando o potencial para destaque
+            marketSize: 10,
+            color: colors.accent3,
+          },
+        ];
+
+        new Chart(ctxPrioritization, {
+          type: "bubble",
+          data: {
+            datasets: projectsData.map((p) => ({
+              label: p.label,
+              data: [{ x: p.ease, y: p.potential, r: p.marketSize * 4 }], // Bolhas maiores
+              backgroundColor: p.color + "80", // Opacidade melhorada
+              borderColor: p.color,
+              borderWidth: 3,
+              hoverBackgroundColor: p.color + "CC",
+              hoverBorderColor: p.color,
+              hoverBorderWidth: 4,
+            })),
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+              intersect: false,
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Facilidade de Implementação →",
+                  font: { size: 18, weight: "bold" },
+                  color: "#374151",
+                },
+                min: 0,
+                max: 10,
+                ticks: {
+                  font: { size: 16, weight: "bold" },
+                  color: "#374151",
+                  callback: function (value) {
+                    return value + "/10";
+                  },
+                },
+                grid: {
+                  color: "#e5e7eb",
+                  lineWidth: 1,
+                },
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: "Potencial de Receita (Impacto) →",
+                  font: { size: 18, weight: "bold" },
+                  color: "#374151",
+                },
+                min: 0,
+                max: 10,
+                ticks: {
+                  font: { size: 16, weight: "bold" },
+                  color: "#374151",
+                  callback: function (value) {
+                    return value + "/10";
+                  },
+                },
+                grid: {
+                  color: "#e5e7eb",
+                  lineWidth: 1,
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: false, // Removemos a legenda pois temos cards detalhados abaixo
+              },
+              title: { display: false },
+              tooltip: {
+                backgroundColor: "rgba(0, 0, 0, 0.9)",
+                titleColor: "#ffffff",
+                bodyColor: "#ffffff",
+                borderColor: "#ffffff",
+                borderWidth: 1,
+                cornerRadius: 8,
+                displayColors: true,
+                callbacks: {
+                  title: function (context) {
+                    return context[0].dataset.label;
+                  },
+                  label: function (context) {
+                    const data = context.raw;
+                    return [
+                      `Facilidade: ${data.x}/10`,
+                      `Potencial: ${data.y}/10`,
+                      `Mercado: ${Math.round(data.r / 4)}/10`,
+                      `Prioridade: ${getPriority(data.x, data.y)}`,
+                    ];
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        // Função auxiliar para calcular prioridade
+        function getPriority(ease, potential) {
+          const score = ease * 0.4 + potential * 0.6; // Peso maior no potencial
+          if (score >= 8.5) return "🔥 Alta";
+          if (score >= 7) return "⚡ Média";
+          if (score >= 5) return "📊 Baixa";
+          return "⚠️ Risco";
+        }
+
+        // Restaurant App Chart (Valor Entregue)
+        const ctxRestaurant = document
+          .getElementById("restaurantAppChart")
+          .getContext("2d");
+        new Chart(ctxRestaurant, {
+          type: "bar",
+          data: {
+            labels: [
+              "Giro de Mesa Aumentado",
+              "Custo Operacional Reduzido",
+              "Satisfação do Cliente",
+            ],
+            datasets: [
+              {
+                label: "Impacto Estimado da Solução",
+                data: [15, -25, 20],
+                backgroundColor: [
+                  colors.primary,
+                  colors.accent2,
+                  colors.secondary,
+                ],
+                borderColor: [colors.primary, colors.accent2, colors.secondary],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            indexAxis: "y",
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Proposta de Valor (em %)",
+                font: { size: 16 },
+              },
+            },
+            scales: {
+              x: {
+                ticks: { callback: (value) => value + "%", font: { size: 14 } },
+              },
+              y: { ticks: { font: { size: 14 } } },
+            },
+          },
+        });
+
+        // Portfolio Chart (Esforço vs. Margem de Hosting)
+        const ctxPortfolio = document
+          .getElementById("portfolioChart")
+          .getContext("2d");
+        new Chart(ctxPortfolio, {
+          type: "bar",
+          data: {
+            labels: ["Alocação de Esforço", "Composição da Margem"],
+            datasets: [
+              {
+                label: "Setup Inicial",
+                data: [80, 10],
+                backgroundColor: colors.accent1,
+              },
+              {
+                label: "Hosting Recorrente",
+                data: [20, 90],
+                backgroundColor: colors.secondary,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                stacked: true,
+                title: {
+                  display: true,
+                  text: "Percentual",
+                  font: { size: 16 },
+                },
+                ticks: { font: { size: 14 } },
+              },
+              y: { stacked: true, max: 100, ticks: { font: { size: 14 } } },
+            },
+            plugins: {
+              legend: { position: "bottom", labels: { font: { size: 14 } } },
+              title: {
+                display: true,
+                text: "Esforço vs. Margem de Hosting",
+                font: { size: 16 },
+              },
+            },
+          },
+        });
+
+        // Round Table Chart (Motor Experimental B2C)
+        const ctxRoundTable = document
+          .getElementById("roundTableChart")
+          .getContext("2d");
+        new Chart(ctxRoundTable, {
+          type: "radar",
+          data: {
+            labels: [
+              "Risco B2C",
+              "Foco UX/Design",
+              "Foco Dev. Necessário",
+              "Potencial Viral",
+            ],
+            datasets: [
+              {
+                label: "Perfil do Projeto (Escala 1 a 10)",
+                data: [9, 10, 8, 9],
+                backgroundColor: "rgba(255, 99, 97, 0.2)",
+                borderColor: colors.accent2,
+                pointBackgroundColor: colors.accent2,
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: colors.accent2,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              r: {
+                angleLines: { display: false },
+                suggestedMin: 0,
+                suggestedMax: 10,
+                pointLabels: { font: { size: 12 } },
+              },
+            },
+            plugins: {
+              legend: { position: "bottom", labels: { font: { size: 14 } } },
+              title: {
+                display: true,
+                text: "Perfil Round Table",
+                font: { size: 16 },
+              },
+            },
+          },
+        });
+      };
+
+      // Chamada dos gráficos no carregamento do DOM
+      document.addEventListener("DOMContentLoaded", renderCharts);
+
+      // Script de Animação de Entrada (Fade-in com Delay)
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Obtém o atraso, senão usa 0
+              const delay = entry.target.dataset.delay
+                ? parseInt(entry.target.dataset.delay) * 100
+                : 0;
+              setTimeout(() => {
+                entry.target.classList.add("fade-in");
+              }, delay);
+              observer.unobserve(entry.target); // Remove o observador após a primeira animação
+            }
+          });
+        },
+        { threshold: 0.1 } // Inicia a animação quando 10% do elemento estiver visível
+      );
+
+      // Aplica o observador a todas as seções e ao header
+      document.querySelectorAll("header, section").forEach((el) => {
+        el.style.opacity = "0"; // Garante que comece invisível
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
